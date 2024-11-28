@@ -48,10 +48,8 @@ elTodoForm.onsubmit = function (e) {
     const todoTitleInput = elTodoForm.querySelector("[name='todoName']");
     const errorElement = todoTitleInput.nextElementSibling;
 
-    // Clear previous error message
     errorElement.textContent = "";
 
-    // Validation: Check if todoName is empty
     if (!todoName.trim()) {
         errorElement.textContent = "Topshiriq nomini kiritishingiz kerak.";
         errorElement.classList.add("text-red-500", "text-sm");
