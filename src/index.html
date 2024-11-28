@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="css/output.css" />
+</head>
+
+
+<body class="flex flex-col h-full">
+    <!-- Header Start -->
+    <header></header>
+    <!-- Header End -->
+
+    <!--! Main Start -->
+    <main class="gradient grow">
+        <div class="flex flex-col mx-auto w-full max-w-96">
+            <form id="todoForm" class="flex flex-col gap-5 py-10">
+                <label class="form-control w-full">
+                    <div class="label">
+                        <span class="text-2xl label-text">To-Do List 🗒</span>
+                    </div>
+                    <input name="todoName" type="text" placeholder="Topshiriq nomini yozing..."
+                        class="placeholder:opacity-60 input-bordered w-full placeholder:text-base input" />
+                    <div class="label"></div>
+                </label>
+                <label class="form-control">
+                    <div class="label">
+                        <span class="text-2xl label-text">Topshiriq haqida batafsil yozing:</span>
+                    </div>
+                    <textarea name="todoBody"
+                        class="placeholder:opacity-60 textarea-bordered h-24 placeholder:text-xl textarea"
+                        placeholder="Topshiriq haqida..."></textarea>
+                </label>
+                <button class="w-full font-serif text-2xl btn btn-active btn-neutral" type="submit">
+                    Qo'shish
+                </button>
+            </form>
+            <ul class="flex flex-col gap-3" id="todosParent"></ul>
+        </div>
+
+        <template id="todoTemplate">
+            <li class="bg-gradient-to-bl shadow-xl w-96 card">
+                <div class="card-body">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <input id="todoCheckbox" type="checkbox" class="border-2 checkbox" />
+                            <h2 class="card-title" id="todoTitle"></h2>
+                        </div>
+                        <button class="text-white btn-accent" id="deleteTodo">X</button>
+                    </div>
+                    <p class="text-ellipsis truncate overflow-hidden" id="todoBody"></p>
+                </div>
+            </li>
+        </template>
+
+
+    </main>
+    <!--! Main End -->
+
+    <!-- Footer Start -->
+    <footer></footer>
+    <!--? Footer End -->
+    <script src="js/app.js" type="module"></script>
+</body>
+
+</html>
