@@ -61,6 +61,12 @@ function loadTodos () {
         errorText.classList.remove('hidden')
         return
       }
+      if (todoTitle.textContent.length > MAX_TITLE_LENGTH) {
+          errorText.textContent = `Topshiriq nomi ${MAX_TITLE_LENGTH} ta belgidan oshmasligi kerak.`
+          
+          errorText.classList.remove('hidden')
+        return
+      }
 
       todoTitle.contentEditable = 'false'
       todoBodyEL.contentEditable = 'false'
@@ -139,6 +145,11 @@ elTodoForm.onsubmit = function (e) {
       errorText.classList.remove('hidden')
       return
     }
+    if (todoTitle.textContent.length > MAX_TITLE_LENGTH) {
+        errorText.textContent = `Topshiriq nomi ${MAX_TITLE_LENGTH} ta belgidan oshmasligi kerak.`
+        errorText.classList.remove('hidden')
+        return
+      }
 
     todoTitle.contentEditable = 'false'
     todoBodyEL.contentEditable = 'false'
