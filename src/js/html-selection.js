@@ -1,5 +1,5 @@
-const elTodosParent = document.getElementById("todosParent");
-const elTodoTemplate = document.getElementById("todoTemplate");
-const elTodoForm = document.getElementById("todoForm");
+const elTodosParent = document.getElementById('todosParent')
+const elTodoTemplate = document.getElementById('todoTemplate')
+const elTodoForm = document.getElementById('todoForm')
 
-export { elTodosParent, elTodoTemplate, elTodoForm };
+export { elTodosParent, elTodoTemplate, elTodoForm }

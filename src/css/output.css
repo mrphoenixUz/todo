@@ -758,36 +758,6 @@ html {
   --bc: 74.6477% 0.0216 264.435964;
 }
 
-.alert {
-  display: grid;
-  width: 100%;
-  grid-auto-flow: row;
-  align-content: flex-start;
-  align-items: center;
-  justify-items: center;
-  gap: 1rem;
-  text-align: center;
-  border-radius: var(--rounded-box, 1rem);
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-border-opacity)));
-  padding: 1rem;
-  --tw-text-opacity: 1;
-  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
-  --alert-bg: var(--fallback-b2,oklch(var(--b2)/1));
-  --alert-bg-mix: var(--fallback-b1,oklch(var(--b1)/1));
-  background-color: var(--alert-bg);
-}
-
-@media (min-width: 640px) {
-  .alert {
-    grid-auto-flow: column;
-    grid-template-columns: auto minmax(auto,1fr);
-    justify-items: start;
-    text-align: start;
-  }
-}
-
 .avatar.placeholder > div {
   display: flex;
   align-items: center;
@@ -1732,8 +1702,16 @@ html {
   margin-right: auto;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-24 {
@@ -1784,6 +1762,14 @@ html {
   gap: 1.25rem;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1798,17 +1784,22 @@ html {
   text-overflow: ellipsis;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-2 {
   border-width: 2px;
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+.border-blue-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
 }
 
-.bg-gradient-to-bl {
-  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .py-10 {
@@ -1830,9 +1821,14 @@ html {
   line-height: 1.25rem;
 }
 
-.text-white {
+.text-blue-500 {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
 }
 
 .text-red-500 {
@@ -1855,11 +1851,19 @@ html {
 }
 
 .gradient {
-  background: linear-gradient(122deg, rgba(139, 11, 218, 0.9) 0%, rgba(0, 0, 0, 0.6195728291316527) 100%);
+  background: linear-gradient(
+    122deg,
+    rgba(139, 11, 218, 0.9) 0%,
+    rgba(0, 0, 0, 0.6195728291316527) 100%
+  );
 }
 
 .gradient-task {
-  background: linear-gradient(36deg, rgba(43, 0, 107, 0.8688725490196079) 0%, rgba(0, 0, 0, 0.6195728291316527) 100%);
+  background: linear-gradient(
+    36deg,
+    rgba(43, 0, 107, 0.8688725490196079) 0%,
+    rgba(0, 0, 0, 0.6195728291316527) 100%
+  );
 }
 
 .card-body {
@@ -1869,9 +1873,13 @@ html {
 }
 
 .card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 #todoBody {
